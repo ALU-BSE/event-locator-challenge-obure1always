@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Locator - Test Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Event Locator - JavaScript Test</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Test Event Filtering</h3>
+                <div class="mb-3">
+                    <label for="testSearch" class="form-label">Search:</label>
+                    <input type="text" class="form-control" id="testSearch" placeholder="Enter search term">
+                </div>
+                <div class="mb-3">
+                    <label for="testCategory" class="form-label">Category:</label>
+                    <select class="form-select" id="testCategory">
+                        <option value="">All Categories</option>
+                        <option value="music">Music</option>
+                        <option value="technology">Technology</option>
+                        <option value="business">Business</option>
+                        <option value="sports">Sports</option>
+                        <option value="arts">Arts & Culture</option>
+                        <option value="food">Food & Drink</option>
+                        <option value="education">Education</option>
+                        <option value="health">Health & Wellness</option>
+                    </select>
+                </div>
+                <button class="btn btn-primary" onclick="testFilter()">Test Filter</button>
+                <button class="btn btn-secondary" onclick="clearTest()">Clear</button>
+            </div>
+            <div class="col-md-6">
+                <h3>Test Results</h3>
+                <div id="testResults" class="border p-3 bg-light">
+                    <p class="text-muted">Click "Test Filter" to see results</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row mt-4">
+            <div class="col-12">
+                <h3>Sample Event Card</h3>
+                <div id="sampleCard"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script>
+        function testFilter() {
+            const searchTerm = document.getElementById('testSearch').value;
+            const category = document.getElementById('testCategory').value;
+            const resultsDiv = document.getElementById('testResults');
+            
+            const filteredEvents = EventLocator.filterEvents(
+                EventLocator.eventsData,
+                searchTerm,
+                '', // date filter
+                category
+            );
+            
+            resultsDiv.innerHTML = `
+                <h5>Found ${filteredEvents.length} events:</h5>
+                <ul class="list-group">
+                    ${filteredEvents.map(event => `
+                        <li class="list-group-item">
+                            <strong>${event.title}</strong><br>
+                            <small class="text-muted">${event.category} - ${EventLocator.formatDate(event.date)}</small>
+                        </li>
+                    `).join('')}
+                </ul>
+            `;
+        }
+        
+        function clearTest() {
+            document.getElementById('testSearch').value = '';
+            document.getElementById('testCategory').value = '';
+            document.getElementById('testResults').innerHTML = '<p class="text-muted">Click "Test Filter" to see results</p>';
+        }
+        
+        // Load sample event card
+        document.addEventListener('DOMContentLoaded', function() {
+            const sampleCard = document.getElementById('sampleCard');
+            if (EventLocator.eventsData.length > 0) {
+                const card = EventLocator.createEventCard(EventLocator.eventsData[0], 'grid');
+                sampleCard.appendChild(card);
+            }
+        });
+    </script>
+</body>
+</html> 
