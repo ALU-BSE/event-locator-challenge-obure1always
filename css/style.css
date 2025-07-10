@@ -1,0 +1,375 @@
+/* Custom Styles for Event Locator */
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 80px 0;
+    margin-bottom: 30px;
+}
+
+.hero-section h1 {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Card Hover Effects */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    border-radius: 12px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Event Cards */
+.event-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.event-card .card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.event-card .card-footer {
+    background: none;
+    border-top: 1px solid #e9ecef;
+    padding: 1rem;
+}
+
+.event-card .btn {
+    border-radius: 25px;
+}
+
+/* Event Image */
+.event-image {
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+/* Category Badges */
+.badge {
+    font-size: 0.75rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 20px;
+}
+
+.badge.bg-music {
+    background-color: #e91e63 !important;
+}
+
+.badge.bg-technology {
+    background-color: #2196f3 !important;
+}
+
+.badge.bg-business {
+    background-color: #4caf50 !important;
+}
+
+.badge.bg-sports {
+    background-color: #ff9800 !important;
+}
+
+.badge.bg-arts {
+    background-color: #9c27b0 !important;
+}
+
+.badge.bg-food {
+    background-color: #f44336 !important;
+}
+
+.badge.bg-education {
+    background-color: #607d8b !important;
+}
+
+.badge.bg-health {
+    background-color: #00bcd4 !important;
+}
+
+/* Search Form */
+.search-form {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+}
+
+/* Loading Animation */
+.loading-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 60px 0;
+    }
+    
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    
+    .card-body {
+        padding: 1rem;
+    }
+    
+    .btn-lg {
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+    }
+}
+
+/* List View Styles */
+.list-view .event-card {
+    flex-direction: row;
+    margin-bottom: 1rem;
+}
+
+.list-view .event-image {
+    width: 200px;
+    height: 150px;
+    border-radius: 12px 0 0 12px;
+}
+
+.list-view .card-body {
+    flex: 1;
+}
+
+/* Grid View Styles */
+.grid-view .event-card {
+    margin-bottom: 1.5rem;
+}
+
+/* Event Details Page */
+.event-details .card {
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.event-details .card-img-top {
+    height: 300px;
+    object-fit: cover;
+}
+
+/* Similar Events */
+.similar-event {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.similar-event:last-child {
+    border-bottom: none;
+}
+
+.similar-event img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 1rem;
+}
+
+.similar-event .event-info {
+    flex: 1;
+}
+
+.similar-event .event-title {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    font-size: 0.9rem;
+}
+
+.similar-event .event-date {
+    font-size: 0.8rem;
+    color: #6c757d;
+}
+
+/* Navigation */
+.navbar-brand {
+    font-size: 1.5rem;
+}
+
+.navbar-brand i {
+    margin-right: 0.5rem;
+}
+
+/* Form Controls */
+.form-control:focus,
+.form-select:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+}
+
+/* Buttons */
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+    transform: translateY(-1px);
+}
+
+/* Footer */
+footer {
+    margin-top: auto;
+}
+
+/* Utility Classes */
+.text-gradient {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.shadow-custom {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Animation Classes */
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Event Highlights */
+.event-highlights li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f8f9fa;
+}
+
+.event-highlights li:last-child {
+    border-bottom: none;
+}
+
+.event-highlights i {
+    color: #667eea;
+    margin-right: 0.5rem;
+}
+
+/* Price Display */
+.price-free {
+    color: #28a745;
+    font-weight: 600;
+}
+
+.price-paid {
+    color: #dc3545;
+    font-weight: 600;
+}
+
+/* Date and Time Display */
+.event-meta {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.event-meta i {
+    width: 20px;
+    margin-right: 0.5rem;
+    color: #667eea;
+}
+
+/* Responsive Images */
+.img-fluid {
+    border-radius: 8px;
+}
+
+/* Search Results */
+.results-count {
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+/* No Results Styling */
+.no-results {
+    text-align: center;
+    padding: 3rem 0;
+}
+
+.no-results i {
+    font-size: 4rem;
+    color: #dee2e6;
+    margin-bottom: 1rem;
+}
+
+/* Filter Section */
+.filter-section {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+/* View Toggle Buttons */
+.view-toggle .btn {
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+}
+
+.view-toggle .btn-check:checked + .btn {
+    background-color: #667eea;
+    border-color: #667eea;
+}
+
+/* Breadcrumb Styling */
+.breadcrumb {
+    background: none;
+    padding: 0;
+    margin: 0;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    content: ">";
+    color: #6c757d;
+}
+
+/* Event Details Responsive */
+@media (max-width: 992px) {
+    .event-details .card-img-top {
+        height: 200px;
+    }
+    
+    .similar-event img {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .navbar,
+    .btn,
+    footer {
+        display: none !important;
+    }
+    
+    .card {
+        box-shadow: none !important;
+        border: 1px solid #dee2e6 !important;
+    }
+} 
